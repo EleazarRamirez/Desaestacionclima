@@ -11,12 +11,15 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      debugShowMaterialGrid: false,
+      theme: ThemeData(
+        fontFamily: 'Monserrat'
+      ),
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor:  const Color.fromARGB(255, 48, 45, 45),
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 245, 71, 3),
-          leading:  CircleAvatar(backgroundImage: AssetImage('/assets/img/logo.png')),
+          leading:  CircleAvatar(backgroundImage: AssetImage('assets/img/logo.png',)),
           title: Center(child: Text('Weather', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),),
           actions: <Widget>[IconButton( icon: Icon(Icons.menu_sharp), onPressed: (){/*accion a realizar*/},)],
         ),
@@ -32,20 +35,74 @@ class _HomeState extends State<Home> {
             Image.asset('assets/img/movil.png',fit: BoxFit.contain, ),
             Text('Cloudy',style: TextStyle(fontSize: 20, color: Colors.white)),
             SizedBox(height: 16,),
-            Stack(alignment: Alignment.topCenter,
-            children:[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('8',style: TextStyle(fontSize: 100,fontWeight: FontWeight.normal, color: Colors.white),),
-              Positioned(
-                top: 8,
-              right: 0,
-              child: Text('°C',style: TextStyle(fontSize: 20, color: Colors.white),),),
-                ],
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center, // Centrar los elementos en la fila
+              crossAxisAlignment: CrossAxisAlignment.start, // Alinear el °C con la parte superior del número
+              children: [
+                Stack(
+                  children: [
+                    // Número grande de temperatura
+                    Text(
+                      '8',
+                      style: TextStyle(
+                        fontSize: 100,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.white,
+                      ),
+                    ),
+                    // °C posicionado en la parte superior derecha del número
+                    Positioned(
+                      top: 0,
+                      right: 8, // Ajusta la posición del °C
+                      child: Text(
+                        '°C',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              
-            ],),
+                SizedBox(width: 60), // Espacio entre la temperatura y la humedad
+                Column(
+                  children: [
+                    // Ícono de humedad
+                    Image.asset('assets/img/humedad1.jpg', // Ruta a la imagen del ícono de humedad
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.contain,
+                    ),
+                    SizedBox(height: 8), // Espacio entre el ícono y el texto
+                    // Texto para la humedad
+                    Text(
+                      '58%',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                    ),
+                    // Texto "Humidity"
+                    Text(
+                      'Humidity',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 16), // Espacio entre la temperatura y la hora
+            // Texto para la fecha y la hora
+            Text(
+              'Today, 5:40 am',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white.withOpacity(0.7),
+              ),
+            ),
             Container(
                   height: 200, // Altura de los elementos de la lista horizontal
                   child: SingleChildScrollView(
@@ -67,6 +124,35 @@ class _HomeState extends State<Home> {
           )
           
         ),
+        bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // Fijar el estilo de la barra
+        backgroundColor: Color(0xFF302D2D), // Color de fondo de la barra
+        selectedItemColor: Colors.red, // Color del ítem seleccionado
+        unselectedItemColor: Colors.white, // Color de los ítems no seleccionados
+        
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.location_on),
+            label: 'Locations',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bar_chart),
+            label: 'Analysis',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            label: 'Calendar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
+      ),
       ),
     );
   }
