@@ -1,0 +1,224 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100px; /* Ajusta el tamaño del logo */
+    margin-right: 20px; /* Espacio entre el logo y la barra de búsqueda */
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #333; /* Backup background */
+    background-image: url('/mnt/data/header.png'); /* Ruta de la imagen que subiste */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 350px;
+    background-color: #4b4848;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 155px;
+    top: 50%;
+    transform: translateY(-50%); /* Centrar el ícono verticalmente */
+    font-size: 18px; /* Tamaño del ícono */
+    color: #aaa; /* Color del ícono */
+}
+
+.search-input::placeholder {
+    color: #fffcfcfb;
+}
+
+/* Sidebar - menú */
+.sidebar-menu {
+    background-color: #4b4848; /* Color de fondo oscuro del menú */
+    padding: 40px 40px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px; /* Esquinas redondeadas */
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0px;
+    margin: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.sidebar-menu li i {
+    font-size: 24px; /* Tamaño del ícono */
+    margin-bottom: 8px;
+}
+
+.sidebar-menu li span {
+    font-size: 14px; /* Tamaño del texto */
+}
+
+/* Elemento activo (Home) */
+.sidebar-menu li.active {
+    color: #f15a24;
+}
+
+.sidebar-menu li.active i {
+    color: #f15a24; /* Ícono de color naranja */
+}
+
+/* Puntos de notificación */
+.notification-dot {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    width: 8px;
+    height: 8px;
+    background-color: #f15a24; /* Color del punto */
+    border-radius: 50%;
+}
+
+/* Hover en los elementos del menú */
+.sidebar-menu li:hover {
+    background-color: #444; /* Color de fondo cuando se pasa el mouse */
+    border-radius: 50px; /* Redondear los bordes al hacer hover */
+}
+
+/* Sección principal */
+.weather-section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Fondo oscuro para todo el main */
+}
+/* Estructura general de la tarjeta gris */
+.weather-card {
+    border-radius: 30px;
+    padding: 20px;
+    color: white;
+    background-color: #444;
+    width: 300px;
+    height: 200px;
+    display: grid;
+    place-items: center;
+}
+
+/* Configuramos la cuadrícula */
+.weather-grid {
+    display: grid;
+    grid-template-areas: 
+        "temperature humidity"
+        "weather-icon weather-icon"
+        "sunrise sunset";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para la temperatura */
+.temperature {
+    grid-area: temperature;
+    align-self: start;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Estilos para la humedad */
+.humidity {
+    grid-area: humidity;
+    align-self: start;
+    justify-self: end;
+    text-align: right;
+}
+
+.humidity i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.humidity span {
+    display: block;
+    font-size: 14px;
+}
+
+/* Estilos para el ícono del clima en el centro */
+.weather-icon {
+    grid-area: weather-icon;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-icon img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.weather-icon p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Amanecer en la esquina inferior izquierda */
+.sunrise {
+    grid-area: sunrise;
+    align-self: start;
+    font-size: 12px;
+}
+
+/* Atardecer en la esquina inferior derecha */
+.sunset {
+    grid-area: sunset;
+    align-self: start;
+    justify-self: end;
+    font-size: 12px;
+}

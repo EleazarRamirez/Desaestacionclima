@@ -10,13 +10,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       debugShowMaterialGrid: false,
       home: Scaffold(
         backgroundColor:  const Color.fromARGB(255, 48, 45, 45),
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 245, 71, 3),
-          leading: const CircleAvatar(),
+          leading:  CircleAvatar(backgroundImage: AssetImage('/assets/img/logo.png')),
           title: Center(child: Text('Weather', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),),
           actions: <Widget>[IconButton( icon: Icon(Icons.menu_sharp), onPressed: (){/*accion a realizar*/},)],
         ),
@@ -26,19 +26,25 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 40,),
+            SizedBox(height: 40,),
             Text('Ensenada, Baja California',
             style: TextStyle(fontSize: 24, color: Colors.white),),
             Image.asset('assets/img/movil.png',fit: BoxFit.contain, ),
             Text('Cloudy',style: TextStyle(fontSize: 20, color: Colors.white)),
             SizedBox(height: 16,),
             Stack(alignment: Alignment.topCenter,
-            children: [
-              Text('8',style: TextStyle(fontSize: 100,fontWeight: FontWeight.normal, color: Colors.white),),
+            children:[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('8',style: TextStyle(fontSize: 100,fontWeight: FontWeight.normal, color: Colors.white),),
               Positioned(
                 top: 8,
               right: 0,
-              child: Text('°C',style: TextStyle(fontSize: 20, color: Colors.white),),)
+              child: Text('°C',style: TextStyle(fontSize: 20, color: Colors.white),),),
+                ],
+                ),
+              
             ],),
             Container(
                   height: 200, // Altura de los elementos de la lista horizontal
