@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100px; /* Ajusta el tamaño del logo */
+    margin-right: 20px; /* Espacio entre el logo y la barra de búsqueda */
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #333; /* Backup background */
+    background-image: image('/logo.png'); /* Ruta de la imagen que subiste */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 350px;
+    background-color: #4b4848;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 155px;
+    top: 50%;
+    transform: translateY(-50%); /* Centrar el ícono verticalmente */
+    font-size: 18px; /* Tamaño del ícono */
+    color: #aaa; /* Color del ícono */
+}
+
+.search-input::placeholder {
+    color: #fffcfcfb;
+}
+
+.container {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+}
+
+.sidebar-menu {
+    background-color: #1a1a1a;
+    width: 100px;
+    height: 620px;
+    padding-top: 60px;
+    border-radius: 50px;
+    display: flex;
+    margin-top: 0px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar-menu li {
+    text-align: center;
+    padding: 20px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.sidebar-menu li i {
+    font-size: 24px;
+}
+
+.sidebar-menu li span {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.sidebar-menu li.active i,
+.sidebar-menu li.active span {
+    color: #f15a24;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    background-color: #f15a24;
+    border-radius: 50%;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.row-days {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.weather-summary {
+    justify-content: space-between;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-areas: 
+        "temperature humidity"
+        "weather-icon weather-icon"
+        "sunrise sunset";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    
+}
+/* Estilos para la temperatura */
+.temperature {
+    grid-area: temperature;
+    align-self: start;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Estilos para la humedad */
+.humidity {
+    grid-area: humidity;
+    align-self: end;
+    justify-self: end;
+    text-align: top;
+    height: 0;
+}
+
+.humidity i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.humidity span {
+    display: block;
+    font-size: 14px;
+}
+
+/* Estilos para el ícono del clima en el centro */
+.weather-icon {
+    grid-area: weather-icon;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-icon img {
+    width: 120px;
+    
+}
+
+.weather-icon p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Amanecer en la esquina inferi   or izquierda */
+.sunrise {
+    grid-area: sunrise;
+    align-self: start;
+    font-size: 12px;
+}
+
+/* Atardecer en la esquina inferior derecha */
+.sunset {
+    grid-area: sunset;
+    align-self: start;
+    justify-self: end;
+    font-size: 12px;
+}
+
+ 
+
+.weather-card {
+    background-color: #f25022;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+.weather-card img{
+    width: 130px;
+    height: 130px;
+}
+
+.weather-card.big-card {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.weather-details {
+    flex: 1;
+    background-color:  #444;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.daily-forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.day-card {
+    display: relative;
+    background-color: #444;
+    border-radius: 120px;
+    padding-top: 60px;
+    height: 350px;
+    text-align: center;
+    flex: 1;
+    margin: 5px;
+    color: white;
+}
+
+.day-card:last-child {
+    margin-right: 20px;
+}
+
+.day-card i {
+    font-size: 20px;
+    margin: 20px 0;
+}
+.specifict{
+    background-color:  #f25022;
+}
+
+.hourly-forecast {
+    background-color: #444;
+    border-radius: 20px;
+    padding: 20px;
+    width: 50%;
+    height: 350px;
+    text-align: center;
+    color: white;
+}
+
+.chart-placeholder {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 20px;
+}

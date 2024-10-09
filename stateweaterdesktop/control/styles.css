@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+.menu-icon,.logout img{
+    width: 40%;  
+    height: 40%; 
+}
+
+.menu-icon {
+    margin-bottom: 40px;
+}
+
+.menu-icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.logo img {
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+.nav {
+    list-style: none;
+    width: 100%;
+    padding-left: 0;
+}
+
+.nav li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.nav li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+.logout a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+header {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+.settings-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.welcome-message {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.welcome-message h2 {
+    font-size: 22px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #e0e0e0;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+}
