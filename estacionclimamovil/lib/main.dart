@@ -1,4 +1,4 @@
-import 'package:estacionclima/screen/home.dart';
+import 'package:clima/screen/myhomepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: const MyHomePage(),
     );
   }
 }

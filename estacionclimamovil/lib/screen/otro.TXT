@@ -1,0 +1,37 @@
+[
+	{
+ 	  "Temperature": 24.37,
+ 	  "Pression": 1011.66,
+	   "DateTime": "2024-10-01T12:30:00Z"
+	},
+	{
+	   "Temperature": 23.36,
+	   "Pression": 1011.76,
+	   "DateTime": "2024-10-01T12:30:00Z"
+	},
+	{
+	   "Temperature": 21.36,
+	   "Pression": 1011.76,
+	   "DateTime": "2024-10-01T12:30:00Z"
+	},
+	{
+	   "Temperature": 24.12,
+	   "Pression": 1011.76,
+	   "DateTime": "2024-10-01T12:30:00Z"
+	},
+	{
+	   "Temperature": 22.16,
+	   "Pression": 1011.76,
+	   "DateTime": "2024-10-01T12:30:00Z"
+	},
+	{
+	   "Temperature": 21.26,
+	   "Pression": 1011.76,
+	   "DateTime": "2024-10-01T12:30:00Z"
+	},
+	{
+	   "Temperature": 23.15,
+	   "Pression": 1011.76,
+	   "DateTime": "2024-10-01T12:30:00Z"
+	}
+]

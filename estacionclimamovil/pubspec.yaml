@@ -1,4 +1,4 @@
-name: estacionclima
+name: clima
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,13 +30,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  fl_chart: ^0.50.0  # Paquete para gráficos
-  path_provider: ^2.0.9  
+    
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  path_provider: ^2.0.11  
+  fl_chart: ^0.69.0
 
 dev_dependencies:
   flutter_test:
@@ -62,8 +63,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/img/
-    - assets/docs/
+     - asset/img/
+     - asset/data.txt
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -82,11 +83,11 @@ flutter:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
- # family: Monserrat
-  #fonts:
-   #  - asset: fonts/Montserrat-Italic-VariableFont_wght.ttf
-    # - asset: fonts/Montserrat-VariableFont_wght.ttf
-     #  weight: 700
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
