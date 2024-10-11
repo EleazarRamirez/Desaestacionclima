@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/control/style1.css">
+    <link rel="stylesheet" href="../control/style1.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -15,7 +15,7 @@
 <body>
      <header class="header">
         <div class="logo-container">
-            <img src="/model/logo.png" alt="Logo" class="logo">
+            <img src="../model/logo.png" alt="Logo" class="logo">
         </div>
         <div class="search-container">
             <i class="fas fa-search search-icon"></i> 
@@ -59,7 +59,7 @@
                     <p>Wednesday, Dec 7</p>
                     <h1>17°C</h1>
                     <p>Rain</p>
-                    <img src="/model/nube1.png" alt="Rain Icon">
+                    <img src="../model/nube1.png" alt="Rain Icon">
                 </div>
 
                 <div class="weather-details">
@@ -75,7 +75,7 @@
             
                     <!-- Ícono del clima en el centro -->
                     <div class="weather-icon">
-                        <img src="/model/nube.png" alt="Rain Icon">
+                        <img src="../model/nube.png" alt="Rain Icon">
                         <p>Rain</p>
                     </div>
             
@@ -131,7 +131,7 @@
                     <script>
                         // Función para cargar el archivo automáticamente cuando la página se carga
                         window.onload = function() {
-                            fetch('/control/otro.TXT') // Cargar el archivo .txt
+                            fetch('../control/otro.TXT') // Cargar el archivo .txt
                                 .then(response => response.text()) // Leer el archivo como texto
                                 .then(data => {
                                     // Parsear el archivo (suponiendo que está en formato JSON)
